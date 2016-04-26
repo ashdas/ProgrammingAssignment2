@@ -1,8 +1,8 @@
-## makeCacheMatrix() takes an matrix vector as an input
+## makeCacheMatrix() takes a matrix vector as an input
 ## It returns a list - with:
-##              get --> To get the vector
-##              set --> To set the vector
-##              setInverse --> returns the inverse of the numeric vector
+##              get --> To get the matrix
+##              set --> To set the matrix
+##              setInverse --> returns the inverse of the matrix
 ##              getInverse --> will be used by cacheSolve() to return the inverse
 ##  
 
@@ -22,13 +22,13 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## cacheSolve() checks if the mtrix inverse has already been calculated
+## cacheSolve() checks if the inverse of the matrix has already been calculated
 ## If Yes, call makeCacheMatrix$getInverse to get the inverse.
-## If No, calculate the inverse. the
-## Function returns the inverse of the matrix.
+## If No, calculate the inverse.
+## This function returns the inverse of the matrix.
 
 cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
+
         inv1 <- x$getInverse()
         if(!is.null(inv1)) {
                 message("getting cached inverse of the matrix")
